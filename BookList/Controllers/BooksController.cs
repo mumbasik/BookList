@@ -29,7 +29,13 @@ namespace BookList.Controllers
         [HttpPost]
         public IActionResult Create([FromBody] Book newBook)
         {
-          
+
+            if (string.IsNullOrWhiteSpace(newBook.Title) || string.IsNullOrWhiteSpace(newBook.Author))
+            {
+                return BadRequest("Title and Author cannot be empty.");
+            }
+
+
             int nextId = BookRepository.Books.Any() ? BookRepository.Books.Max(b => b.ID) + 1 : 1;
             newBook.ID = nextId;
 
