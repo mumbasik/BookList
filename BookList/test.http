@@ -1,0 +1,38 @@
+﻿@baseUrl = https://localhost:7184
+
+
+GET {{baseUrl}}/api/books
+
+###
+
+
+GET {{baseUrl}}/api/books/2
+
+###
+
+
+POST {{baseUrl}}/api/books
+Content-Type: application/json
+
+{
+  "title": "Шерлок Холмс",
+  "author": "Артур Конан Дойл",
+  "year": 1892
+}
+
+###
+
+
+PUT {{baseUrl}}/api/books/1
+Content-Type: application/json
+
+{
+  "title": "Кобзар",
+  "author": "Тарас Шевченко",
+  "year": 1849
+}
+
+###
+
+
+DELETE {{baseUrl}}/api/books/1
